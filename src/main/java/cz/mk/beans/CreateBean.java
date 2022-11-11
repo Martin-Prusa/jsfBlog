@@ -10,6 +10,10 @@ public class CreateBean {
     private String shortDes;
     private String content;
 
+    public void submitForm() {
+        System.out.println(title + shortDes + content);
+    }
+
     public String getTitle() {
         return title;
     }
@@ -32,9 +36,5 @@ public class CreateBean {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public void submitForm() {
-        System.out.println(title + shortDes + content);
     }
 }
