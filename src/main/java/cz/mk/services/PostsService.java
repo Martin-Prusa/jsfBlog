@@ -3,12 +3,16 @@ package cz.mk.services;
 import cz.mk.interfaces.services.IPostsService;
 import cz.mk.models.Post;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostsService implements IPostsService {
+
+    private List<Post> posts = new ArrayList<>();
+
     @Override
     public void addPost(Post post) {
-
+        this.posts.add(post);
     }
 
     @Override
@@ -18,16 +22,16 @@ public class PostsService implements IPostsService {
 
     @Override
     public void deletePost(String id) {
-
+        this.posts.remove(id);
     }
 
     @Override
     public List<Post> getPosts() {
-        return null;
+        return posts;
     }
 
     @Override
-    public Post getPostById(String id) {
+    public Post getPostById(String id) {    //idk... zkoušel jsem indexOf atd... 
         return null;
     }
 }
