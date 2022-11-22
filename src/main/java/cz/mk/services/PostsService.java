@@ -31,7 +31,7 @@ public class PostsService implements IPostsService {
     }
 
     @Override
-    public Post getPostById(String id) {    //idk... zkoušel jsem indexOf atd... 
+    public Post getPostById(String id) {    //idk... zkoušel jsem indexOf atd...
         return null;
     }
 }
