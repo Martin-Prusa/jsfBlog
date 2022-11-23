@@ -16,26 +16,35 @@
     </div>
 
     <div class="container">
+        <em>
+            <h:link class="text-decoration-none" outcome="create.xhtml" value="Create New Post"/>
+        </em>
 
-        <h:link outcome="create.xhtml" value="Create New Post" />
-
+        <div class="d-flex justify-content-around align-items-stretch">
         <ui:repeat value="#{mainBean.posts}" var="post">
             <div class="card mt-3" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">#{post.title}</h5>
+                    <p>
+                        <em>
+                        <h:link class="me-2 text-decoration-none" outcome="post-detail.xhtml" value="Detail">
+                            <f:param name="id" value="#{post.id}"/>
+                        </h:link>
+                        <h:link class="text-decoration-none" outcome="edit.xhtml" value="Edit">
+                            <f:param name="id" value="#{post.id}"/>
+                        </h:link>
+                    </em>
+                    </p>
+                    <h5 class="card-title m-0">#{post.title}</h5>
                     <p class="card-text">#{post.description}</p>
-                    <h:link outcome="post-detail.xhtml" value="View Detail" >
-                        <f:param name="id" value="#{post.id}" />
-                    </h:link>
-                    <h:link outcome="edit.xhtml" value="Edit" >
-                        <f:param name="id" value="#{post.id}" />
-                    </h:link>
+
                     <h:form>
-                        <h:commandButton value="Delete" action="#{mainBean.deletePost(post.id)}"/>
+                        <h:commandButton class="btn btn-danger" value="Delete"
+                                         action="#{mainBean.deletePost(post.id)}"/>
                     </h:form>
                 </div>
             </div>
         </ui:repeat>
+    </div>
     </div>
 
 </h:body>

@@ -9,8 +9,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"></link>
 </h:head>
 <h:body>
+
+    <div class="text-center mt-2">
+        <h1>#{detailBean.post.title}</h1>
+    </div>
     <div class="container">
-        <p>#{detailBean.post.id}</p>
+        <em>
+            <h:link class="text-decoration-none" outcome="index.xhtml" value="Back"/>
+        </em>
+
+        <table class="table mt-5">
+            <tbody>
+            <tr>
+                <th scope="row">ID</th>
+                <td>#{detailBean.post.id}</td>
+            </tr>
+            <tr>
+                <th scope="row">Title</th>
+                <td>#{detailBean.post.title}</td>
+            </tr>
+            <tr>
+                <th scope="row">Description</th>
+                <td>#{detailBean.post.description}</td>
+            </tr>
+            <tr>
+                <th scope="row">Content</th>
+                <td>#{detailBean.post.content}</td>
+            </tr>
+            <tr>
+                <th scope="row">Created at:</th>
+                <td>#{detailBean.post.createdAt}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </h:body>
 </html>
