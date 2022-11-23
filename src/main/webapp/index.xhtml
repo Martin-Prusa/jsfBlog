@@ -30,7 +30,9 @@
                     <h:link outcome="edit.xhtml" value="Upravit" >
                         <f:param name="id" value="#{post.id}" />
                     </h:link>
-                    <h:commandButton value="Smazat" action="#{mainBean.deletePost(post.id)}"/>
+                    <h:form>
+                        <h:commandButton value="Smazat" action="#{mainBean.deletePost(post.id)}"/>
+                    </h:form>
                 </div>
             </div>
         </ui:repeat>

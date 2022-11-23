@@ -25,7 +25,9 @@ public class PostsService implements IPostsService {
 
     @Override
     public void deletePost(String id) {
-        this.posts.remove(id);
+        Optional<Post> post = this.getPostById(id);
+        if(post.isEmpty()) return;
+        this.posts.remove(post.get());
     }
 
     @Override
@@ -34,7 +36,7 @@ public class PostsService implements IPostsService {
     }
 
     @Override
-    public Optional<Post> getPostById(String id) {    //idk... zkoušel jsem indexOf atd...
-        return null;
+    public Optional<Post> getPostById(String id) {
+        return this.posts.stream().filter(i -> i.getId().equals(id)).findAny();
     }
 }
