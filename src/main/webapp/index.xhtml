@@ -24,14 +24,14 @@
                 <div class="card-body">
                     <h5 class="card-title">#{post.title}</h5>
                     <p class="card-text">#{post.description}</p>
-                    <h:link outcome="post-detail.xhtml" value="Zobrazit" >
+                    <h:link outcome="post-detail.xhtml" value="View Detail" >
                         <f:param name="id" value="#{post.id}" />
                     </h:link>
-                    <h:link outcome="edit.xhtml" value="Upravit" >
+                    <h:link outcome="edit.xhtml" value="Edit" >
                         <f:param name="id" value="#{post.id}" />
                     </h:link>
                     <h:form>
-                        <h:commandButton value="Smazat" action="#{mainBean.deletePost(post.id)}"/>
+                        <h:commandButton value="Delete" action="#{mainBean.deletePost(post.id)}"/>
                     </h:form>
                 </div>
             </div>
