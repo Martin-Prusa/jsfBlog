@@ -6,12 +6,14 @@ import cz.mk.gson.deserializers.LocalDateTimeDeserializer;
 import cz.mk.gson.serializers.LocalDateTimeSerializer;
 import cz.mk.interfaces.resources.IPostsResource;
 import cz.mk.models.Post;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class PostsResource implements IPostsResource {
     private Gson gson = new GsonBuilder()
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer())
