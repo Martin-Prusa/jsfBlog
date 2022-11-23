@@ -3,6 +3,7 @@ package cz.mk.interfaces.services;
 import cz.mk.models.Post;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IPostsService {
     void addPost(Post post);
@@ -13,5 +14,5 @@ public interface IPostsService {
 
     List<Post> getPosts();
 
-    Post getPostById(String id);
+    Optional<Post> getPostById(String id);
 }
