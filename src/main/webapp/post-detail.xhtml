@@ -47,15 +47,13 @@
                 <td>#{detailBean.post.description}</td>
             </tr>
             <tr>
-                <th scope="row">Content</th>
-                <td>#{detailBean.post.content}</td>
-            </tr>
-            <tr>
                 <th scope="row">Created at:</th>
                 <td>#{detailBean.post.createdAt}</td>
             </tr>
+
             </tbody>
         </table>
+        #{detailBean.post.content}
     </div>
 </h:body>
 </html>

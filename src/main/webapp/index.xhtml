@@ -12,13 +12,13 @@
 <h:body>
 
     <div class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse ms-2" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="index.xhtml">Home</a>
+                    <a class="nav-link text-dark" href="index.xhtml"> <em> Home </em></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="create.xhtml">Create</a>
+                    <a class="nav-link text-dark" href="create.xhtml"> <em>Create</em></a>
                 </li>
             </ul>
         </div>
@@ -29,6 +29,8 @@
     </div>
 
     <div class="container">
+
+
         <div class="d-flex flex-wrap gap-4 align-items-stretch">
             <ui:repeat value="#{mainBean.posts}" var="post">
                 <div class="card mt-3" style="width: 18rem;">
