@@ -11,40 +11,50 @@
 </h:head>
 <h:body>
 
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse ms-2" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="index.xhtml">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="create.xhtml">Create</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="text-center mt-2">
         <h1>Blog</h1>
     </div>
 
     <div class="container">
-        <em>
-            <h:link class="text-decoration-none" outcome="create.xhtml" value="Create New Post"/>
-        </em>
+   
+        <div class="d-flex flex-wrap gap-4 align-items-stretch">
+            <ui:repeat value="#{mainBean.posts}" var="post">
+                <div class="card mt-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="d-flex justify-content-end m-0">
+                            <em>
+                                <h:link class="me-2 text-decoration-none mb-0" outcome="post-detail.xhtml" value="Detail">
+                                    <f:param name="id" value="#{post.id}"/>
+                                </h:link>
+                                <h:link class="text-decoration-none mb-0" outcome="edit.xhtml" value="Edit">
+                                    <f:param name="id" value="#{post.id}"/>
+                                </h:link>
+                            </em>
+                        </p>
+                        <h5 class="card-title m-0">#{post.title}</h5>
+                        <p class="card-text">#{post.description}</p>
 
-        <div class="d-flex justify-content-around align-items-stretch">
-        <ui:repeat value="#{mainBean.posts}" var="post">
-            <div class="card mt-3" style="width: 18rem;">
-                <div class="card-body">
-                    <p>
-                        <em>
-                        <h:link class="me-2 text-decoration-none" outcome="post-detail.xhtml" value="Detail">
-                            <f:param name="id" value="#{post.id}"/>
-                        </h:link>
-                        <h:link class="text-decoration-none" outcome="edit.xhtml" value="Edit">
-                            <f:param name="id" value="#{post.id}"/>
-                        </h:link>
-                    </em>
-                    </p>
-                    <h5 class="card-title m-0">#{post.title}</h5>
-                    <p class="card-text">#{post.description}</p>
-
-                    <h:form>
-                        <h:commandButton class="btn btn-danger" value="Delete"
-                                         action="#{mainBean.deletePost(post.id)}"/>
-                    </h:form>
+                        <h:form>
+                            <h:commandButton class="btn btn-danger" value="Delete"
+                                             action="#{mainBean.deletePost(post.id)}"/>
+                        </h:form>
+                    </div>
                 </div>
-            </div>
-        </ui:repeat>
-    </div>
+            </ui:repeat>
+        </div>
     </div>
 
 </h:body>
