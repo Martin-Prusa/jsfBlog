@@ -35,10 +35,6 @@
         <table class="table mt-5">
             <tbody>
             <tr>
-                <th scope="row">ID</th>
-                <td>#{detailBean.post.id}</td>
-            </tr>
-            <tr>
                 <th scope="row">Title</th>
                 <td>#{detailBean.post.title}</td>
             </tr>
@@ -48,7 +44,7 @@
             </tr>
             <tr>
                 <th scope="row">Created at:</th>
-                <td>#{detailBean.post.createdAt}</td>
+                <td>#{formatBean.formatDate(detailBean.post.createdAt)}</td>
             </tr>
 
             </tbody>
