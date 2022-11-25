@@ -53,7 +53,7 @@
 
             </tbody>
         </table>
-        #{detailBean.post.content}
+        <h:outputText escape="false" value="#{formatBean.mtToHtml(detailBean.post.content)}" />
     </div>
 </h:body>
 </html>
