@@ -24,7 +24,7 @@ public class PostsResource implements IPostsResource {
     public List<Post> load() {
         List<Post> list = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("simple-cms-jsf-data.json"));
+            BufferedReader br = new BufferedReader(new FileReader("blog-jsf-data.json"));
             String json = br.readLine();
             list = new ArrayList<>(List.of(gson.fromJson(json, Post[].class)));
             br.close();
@@ -35,7 +35,7 @@ public class PostsResource implements IPostsResource {
     @Override
     public void save(List<Post> posts) {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("simple-cms-jsf-data.json", false));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("blog-jsf-data.json", false));
             bw.write(gson.toJson(posts));
             bw.close();
         } catch (IOException ignored) {}
